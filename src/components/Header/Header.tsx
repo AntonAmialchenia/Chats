@@ -4,7 +4,6 @@ import { FC } from "react";
 
 export const Header: FC = () => {
   const { title } = useAppSelector((state) => state.title);
-  console.log(title);
 
   return (
     <header className="flex items-center gap-2 px-4 py-5 shadow-[0_-1px_0_0_rgba(32,31,30,0.12)_inset]">
