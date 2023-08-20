@@ -13,6 +13,14 @@ export interface ChatList {
   count_unread: number;
 }
 
+export interface Message {
+  id: string;
+  created_at: number;
+  user: User;
+  message: string;
+  is_new: boolean;
+}
+
 export interface LastMessage {
   created_at: number;
   user_id: string;
@@ -27,4 +35,8 @@ export interface User {
   name: string;
   surname: string;
   avatar: string;
+}
+
+export interface UserMessage extends User {
+  you: boolean;
 }
