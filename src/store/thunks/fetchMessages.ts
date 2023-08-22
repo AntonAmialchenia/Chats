@@ -3,7 +3,7 @@ import { Message } from "../../interfaces";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchMessages = createAsyncThunk<Message[], string>(
-  "users/fetchByIdStatus",
+  "users/fetchMessages",
   async function (id) {
     return await getMessage(id);
   },
