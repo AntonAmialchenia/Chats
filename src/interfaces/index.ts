@@ -16,7 +16,7 @@ export interface ChatList {
 export interface Message {
   id: string;
   created_at: number;
-  user: User;
+  user: UserMessage;
   message: string;
   is_new: boolean;
 }
