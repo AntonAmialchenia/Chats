@@ -3,7 +3,7 @@ import ContentLoader from "react-content-loader";
 
 interface LoaderProps {}
 
-export const Loader: FC<LoaderProps> = ({}) => {
+export const LoaderChats: FC<LoaderProps> = ({}) => {
   return (
     <ContentLoader
       speed={1}

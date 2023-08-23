@@ -35,7 +35,7 @@ export const Message: FC<MessageProps> = ({
         )}
         <div
           className={clsx(
-            "py-2 px-3 flex gap-1 rounded",
+            "py-2 px-3 flex gap-1 rounded text-[15px] leading-5",
             user.you ? "bg-[#407ec914]" : "bg-[#f3f3f3]",
           )}>
           {text} {user.you && <Time created={createdMessage} />}

@@ -2,7 +2,7 @@ import { FC, useEffect } from "react";
 import { ChatItem } from "../ChatItem";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { fetchChats } from "../../store/thunks/fetchChats";
-import { Loader } from "../Loader";
+import { LoaderChats } from "../LoaderChats";
 
 export const ChatItemList: FC = () => {
   const dispatch = useAppDispatch();
@@ -13,7 +13,7 @@ export const ChatItemList: FC = () => {
   }, [dispatch]);
 
   const sceletons = [...new Array(12)].map((_, index) => (
-    <Loader key={index} />
+    <LoaderChats key={index} />
   ));
 
   return (
