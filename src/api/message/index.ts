@@ -10,5 +10,5 @@ export const getMessage = async (id: string) => {
     },
   );
 
-  return data.response;
+  return data.response.reverse();
 };

@@ -7,7 +7,7 @@ interface TimeProps {
 
 export const Time: FC<TimeProps> = ({ created }) => {
   return (
-    <div className="flex items-center gap-0.5">
+    <div className="flex items-center gap-0.5 self-end ">
       <span className=" text-xs leading-[9px]">{created}</span>
       <Birds className="text-[#407EC9]" />
     </div>

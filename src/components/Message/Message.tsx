@@ -3,40 +3,45 @@ import { Avatar } from "../Avatar";
 import { Time } from "../Time";
 import dayjs from "dayjs";
 import clsx from "clsx";
+import { UserMessage } from "../../interfaces";
 
 interface MessageProps {
-  src: string;
-  name: string;
-  surname: string;
   text: string;
   created: number;
-  you: boolean;
+
+  user: UserMessage;
 }
 
 export const Message: FC<MessageProps> = ({
-  src,
-  name,
-  surname,
   text,
   created,
-  you,
+
+  user,
 }) => {
   const createdMessage = dayjs(created).format("HH:mm");
+  const date = new Date(created);
+  var now = dayjs(created);
+  console.log(now);
+
   return (
-    <div className={clsx("flex mb-3", you && "self-end")}>
-      {!you && (
-        <div>
-          <Avatar src={src} />
-        </div>
-      )}
-      <div className={you ? "bg-[#407ec914]" : "bg-[#f3f3f3]"}>
-        {!you && (
-          <h5>
-            {name} {surname}
+    <div
+      className={clsx(
+        "flex mb-3 gap-2 max-w-[446px] ",
+        user.you && "self-end max-w-[512px]",
+      )}>
+      {!user.you && <Avatar size="sm" src={user.avatar} className=" rounded" />}
+      <div>
+        {!user.you && (
+          <h5 className=" text-[15px] leading-5 font-bold mb-1">
+            {user.name} {user.surname}
           </h5>
         )}
-        <div>
-          {text} {you && <Time created={createdMessage} />}
+        <div
+          className={clsx(
+            "py-2 px-3 flex gap-1 rounded",
+            user.you ? "bg-[#407ec914]" : "bg-[#f3f3f3]",
+          )}>
+          {text} {user.you && <Time created={createdMessage} />}
         </div>
       </div>
     </div>
