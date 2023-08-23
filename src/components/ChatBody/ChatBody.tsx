@@ -28,7 +28,7 @@ export const ChatBody: FC<ChatBodyProps> = ({}) => {
   return (
     <div className="flex flex-col">
       <Header />
-      <div className="flex flex-col h-[calc(100vh-175px)] overflow-x-auto py-4 px-6">
+      <div className="flex flex-col gap-3 h-[calc(100vh-175px)] overflow-x-auto py-4 px-6">
         {messages.map((item) => (
           <Fragment key={item.id}>
             {item.is_new && !isNew ? returnNewMessage() : ""}

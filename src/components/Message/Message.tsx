@@ -19,14 +19,11 @@ export const Message: FC<MessageProps> = ({
   user,
 }) => {
   const createdMessage = dayjs(created).format("HH:mm");
-  const date = new Date(created);
-  var now = dayjs(created);
-  console.log(now);
 
   return (
     <div
       className={clsx(
-        "flex mb-3 gap-2 max-w-[446px] ",
+        "flex gap-2 max-w-[446px] ",
         user.you && "self-end max-w-[512px]",
       )}>
       {!user.you && <Avatar size="sm" src={user.avatar} className=" rounded" />}
