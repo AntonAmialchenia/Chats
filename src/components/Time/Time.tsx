@@ -3,13 +3,14 @@ import { Birds } from "../../icons/Birds";
 
 interface TimeProps {
   created: string;
+  my: boolean;
 }
 
-export const Time: FC<TimeProps> = ({ created }) => {
+export const Time: FC<TimeProps> = ({ created, my }) => {
   return (
     <div className="flex items-center gap-0.5 self-end ">
       <span className=" text-xs leading-[9px]">{created}</span>
-      <Birds className="text-[#407EC9]" />
+      {my && <Birds className="text-[#407EC9]" />}
     </div>
   );
 };

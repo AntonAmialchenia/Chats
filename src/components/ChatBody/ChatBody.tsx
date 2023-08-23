@@ -35,14 +35,23 @@ export const ChatBody: FC<ChatBodyProps> = ({}) => {
         {loading === "pending" && sceletons}
 
         {loading === "fulfilled" &&
-          messages.map((item) => (
+          messages.map((item, i, arr) => (
             <Fragment key={item.id}>
               {item.is_new && !isNew ? returnNewMessage() : ""}
-              <Message
-                user={item.user}
-                text={item.message}
-                created={item.created_at}
-              />
+              {item.user.id === arr[i - 1]?.user?.id ? (
+                <Message
+                  user={item.user}
+                  text={item.message}
+                  created={item.created_at}
+                  isCurrentUserMessage
+                />
+              ) : (
+                <Message
+                  user={item.user}
+                  text={item.message}
+                  created={item.created_at}
+                />
+              )}
             </Fragment>
           ))}
         {loading === "failed" && <h3>Не удалось загрузить сообщения</h3>}
