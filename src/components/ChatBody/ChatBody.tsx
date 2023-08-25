@@ -31,7 +31,7 @@ export const ChatBody: FC<ChatBodyProps> = ({}) => {
   return (
     <div className="flex flex-col">
       <Header />
-      <div className="flex flex-col gap-3 h-[calc(100vh-175px)] overflow-x-auto py-4 px-6">
+      <div className="flex flex-col gap-3 h-[calc(100vh-225px)] overflow-x-auto py-4 px-6 grow">
         {loading === "pending" && sceletons}
 
         {loading === "fulfilled" &&

@@ -25,7 +25,6 @@ export const ChatItemList: FC = () => {
           <ChatItem
             key={item.id}
             id={item.id}
-            isActive
             title={item.title}
             avatar={item.avatar}
             last_message={item.last_message}
